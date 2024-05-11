@@ -1,12 +1,13 @@
 "use client"
-import Link from 'next/link'
+import Typography from '@mui/material/Typography';
+import Link from '@mui/material/Link';
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 
 export default function ProTip() {
   return (
-    <p className={`text-center`}>
-      <EmailOutlinedIcon sx={{ mr: 1, verticalAlign: 'middle' }} />
-      <Link href="mailto:slucasmyer@icloud.com">Get in touch</Link>
-    </p>
+    <Typography sx={{ textAlign: 'center', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <EmailOutlinedIcon sx={{ mr: 1 }} />
+      <Link href="mailto:rosesmyer@icloud.com" sx={{ verticalAlign: 'middle' }}>Get in touch</Link>
+    </Typography>
   );
 }

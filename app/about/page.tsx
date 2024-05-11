@@ -12,13 +12,13 @@ const container_style = {
   overflowY: 'auto'
 }
 
-export default function Home(props: any) {
+export default function About(props: any) {
   return (
     <Container maxWidth="lg" sx={container_style}>
       <Stack direction="column" spacing={3} sx={{ width: '100%', alignItems: 'center', justifyContent: 'center' }}>
-        {Array(7).fill(undefined).map((_, i) => (
+        {Array(15).fill(undefined).map((_, i) => (
           <Typography key={i} variant="h4" sx={{ textAlign: 'center', color: 'white' }}>
-            FLOWERS FOR EVERYONE
+            ABOUT
           </Typography>
         ))}
       </Stack>

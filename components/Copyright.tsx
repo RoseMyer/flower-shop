@@ -1,11 +1,12 @@
-import Link from 'next/link';
+import Typography from '@mui/material/Typography';
+import Link from '@mui/material/Link';
 
 export default function Copyright() {
   return (
-    <p className={`text-center`}>
+    <Typography sx={{ textAlign: 'center' }}>
       {'Copyright © '}
-      <Link color={`inherit`} href="/">Icarus Drones, Inc.</Link>{' '}
+      <Link href="/">Flower Shop, Inc.</Link>{' '}
       {new Date().getFullYear()}.
-    </p>
+    </Typography>
   );
 }

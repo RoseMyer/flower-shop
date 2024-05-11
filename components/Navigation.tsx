@@ -1,27 +1,15 @@
 'use client'
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
-import { AppBar, Slide, useScrollTrigger, IconButton, Drawer, List, ListItem } from "@mui/material";
+import { AppBar, Slide, useScrollTrigger, IconButton, Drawer, List, ListItem, Typography } from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
 import { usePathname } from "next/navigation";
-import { Modal } from './Modal';
 
 
 export default function Navigation() {
   const trigger = useScrollTrigger();
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
-  const [showAbout, setShowAbout] = useState(false);
-
-  const handleAboutClick = () => {
-    setMenuOpen(false);
-    setShowAbout(true);
-  };
-
-  const handleCloseModal = () => {
-    setMenuOpen(true);
-    setShowAbout(false);
-  };
 
   useEffect(() => {
     setMenuOpen(false);
@@ -33,33 +21,38 @@ export default function Navigation() {
     { href: '/checkout', text: 'CHECKOUT' }
   ];
 
-  const modalBody =`Welcome to the Rose Bush!`
+  const link_style = {
+    cursor: 'pointer',
+    fontWeight: 'bold',
+    transition: 'transform 0.5s ease-in-out',
+    '&:hover': {
+      transform: 'scale(1.25)',
+      // color: 'gray'
+    }
+  }
 
   return (
     <Slide appear={false} direction="down" in={!trigger}>
-      <AppBar className={`nav-bar`} sx={{backgroundColor:`#4338ca`}}>
-
+      <AppBar sx={{backgroundColor:`#4338ca`, px: 4, py: 2}}>
         <nav style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%' }}>
-          <Link href={`/`}><h1 className={`transition-all duration-500 text-3xl text-bold hover:underline hover:scale-125 leading-relaxed`}>ICARUS DRONES</h1></Link>
+          <Link href={`/`}>
+          <Typography variant="h4" sx={link_style}>FLOWER SHOP</Typography>  
+          </Link>
           <IconButton onClick={() => setMenuOpen(true)} color="inherit">
-            <MenuIcon fontSize='large' className={`transition-all duration-500 text-3xl text-bold hover:scale-125`}/>
+            <MenuIcon fontSize='large' sx={link_style}/>
           </IconButton>
           <Drawer anchor="right" open={menuOpen} onClose={() => setMenuOpen(false)}>
-            <List sx={{ width: 300, bgcolor: '#4338ca', minHeight: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+            <List sx={{ width: 300, bgcolor: '#4338ca', minHeight: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'space-evenly' }}>
               {links.map((link, index) => (
                 <Link href={link.href} key={index}>
-                  <ListItem sx={{ justifyContent: 'center' }}>
-                    <h1 className={`transition-all duration-500 text-2xl text-bold hover:underline hover:scale-125 my-5`}>{link.text}</h1>
+                  <ListItem sx={{ justifyContent: 'center', color: 'white' }}>
+                    <Typography variant="h4" sx={link_style}>{link.text}</Typography>
                   </ListItem>
                 </Link>
               ))}
-              <button onClick={handleAboutClick} >
-                <h1 className={`transition-all duration-500 text-2xl text-bold hover:underline hover:scale-125 my-5`}>{'ABOUT'}</h1>     
-              </button>
             </List>
           </Drawer>
         </nav>
-        <Modal show={showAbout} onClose={handleCloseModal} title={'HOW TO USE'} body={modalBody} />
       </AppBar>
     </Slide>
   );

@@ -1,11 +1,9 @@
 import "@/styles/globals.css"
-// import "@/styles/app.css";
-// import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter';
-// import { ThemeProvider } from '@mui/material/styles';
+import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter';
+import { ThemeProvider } from '@mui/material/styles';
+import {Container} from "@mui/material";
 import type { Metadata } from "next";
 import { Orbitron } from "next/font/google";
-
-
 import theme from '@/styles/theme';
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer';
@@ -29,16 +27,16 @@ interface LayoutProps {
 export default function RootLayout({children}:LayoutProps) {
   return (
     <html lang="en" className={orbitron.className}>
-      <body >
-        {/* <AppRouterCacheProvider options={{ enableCssLayer: true }}>
-          <ThemeProvider theme={theme}> */}
-            <div className={"layout-screen"}>
+      <body>
+        <AppRouterCacheProvider options={{ enableCssLayer: true }}>
+          <ThemeProvider theme={theme}>
+            <Container>
               <Navigation />
               {children}
               <Footer />
-            </div>
-          {/* </ThemeProvider>
-        </AppRouterCacheProvider> */}
+            </Container>
+          </ThemeProvider>
+        </AppRouterCacheProvider>
       </body>
     </html>
   );
