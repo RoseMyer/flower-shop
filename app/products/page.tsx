@@ -15,9 +15,12 @@ const container_style = {
   overflowY: 'auto'
 }
 
-const fetchProducts = async(table: string, setData: Dispatch<SetStateAction<QueryResult>>) => {
+const fetchProducts = async(table: string, setData: Dispatch<SetStateAction<any[]>>) => {
   try {
-    setData(await _read(table));
+    console.log('at least it is being called')
+    const rows = await _read(table);
+    console.log('client-side rows', rows)
+    setData(rows);
   } catch (error) {
     console.error("Failed to fetch data:", error);
   }
@@ -25,7 +28,7 @@ const fetchProducts = async(table: string, setData: Dispatch<SetStateAction<Quer
 
 export default function Products(props: any) {
 
-  const [products, setProducts] = useState<QueryResult>([])
+  const [products, setProducts] = useState<any[]>([])
 
   useEffect(() => {
     fetchProducts('products', setProducts);
@@ -36,9 +39,9 @@ export default function Products(props: any) {
   return (
     <Container maxWidth="lg" sx={container_style}>
       <Stack direction="column" spacing={3} sx={{ width: '100%', alignItems: 'center', justifyContent: 'center' }}>
-        {Array(15).fill(undefined).map((_, i) => (
+        {products.map((product: any, i: number) => (
           <Typography key={i} variant="h4" sx={{ textAlign: 'center', color: 'white' }}>
-            PRODUCTS
+            {product.name}
           </Typography>
         ))}
       </Stack>

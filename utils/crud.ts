@@ -20,9 +20,10 @@ export async function _create(table: string, data: any): Promise<boolean> {
     }
 }
 
-export async function _read(table: string): Promise<QueryResult> {
+export async function _read(table: string): Promise<any[]> {
     const [rows] = await pool.query(`SELECT * FROM ${table}`);
-    return rows;
+    console.log('rows', rows)
+    return rows as any[];
 }
 
 export async function _update() {

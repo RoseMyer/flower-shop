@@ -18,7 +18,8 @@ export default function Navigation() {
   const links = [
     { href: '/about', text: 'ABOUT' },
     { href: '/products', text: 'PRODUCTS' },
-    { href: '/checkout', text: 'CHECKOUT' }
+    { href: '/checkout', text: 'CHECKOUT' },
+    { href: '/help', text: 'HELP/FAQ' }
   ];
 
   const link_style = {
