@@ -1,8 +1,15 @@
 "use server"
 
 import { SESClient, SendEmailCommand } from "@aws-sdk/client-ses";
+import { AwsCredentialIdentity } from "@aws-sdk/types";
 
-const sesClient = new SESClient({ region: "us-east-2" });
+const sesClient = new SESClient({
+    region: 'us-east-2',
+    credentials: {
+        accessKeyId: process.env.AKID,
+        secretAccessKey: process.env.SAKID
+      }
+});
 
 export const sendEmail = async (customerData: any, orderData: any) => {
     const params = {
