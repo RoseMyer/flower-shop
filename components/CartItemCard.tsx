@@ -19,7 +19,7 @@ export const CartItemCard = ({ cartItem }: { cartItem: CartItem }) => {
   const cart = useContext(CartContext);
 
   return (
-    <Card sx={{ maxWidth: 345, marginBottom: 2 }}>
+    <Card sx={{ maxWidth: 500, marginBottom: 2 }}>
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
           {cartItem.item.name}

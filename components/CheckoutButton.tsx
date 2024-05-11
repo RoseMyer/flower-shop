@@ -80,8 +80,7 @@ export function CheckoutButton() {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const handleConfirm = async (formData: any) => {
-    // Here you would call your _create function or similar API to submit the data
-    console.log(formData); // Implement your API call here
+    console.log(formData);
     const customer_res = await _create('customers', formData)
     if (customer_res === -1) {
         alert("something went wrong. Please try again.")

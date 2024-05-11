@@ -18,7 +18,7 @@ export const ProductCard = ({ product }: { product: Product }) => {
       <CardMedia
         component="img"
         height="140"
-        image={`/${product.name}.png`}
+        image={`/${product.name.toLowerCase()}.png`}
         alt={product.name}
       />
       <CardContent>
