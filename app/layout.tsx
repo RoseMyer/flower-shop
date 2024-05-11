@@ -18,7 +18,7 @@ const orbitron = Orbitron({
 
 
 export const metadata: Metadata = {
-  title: "Mama San's Rosebush",
+  title: "Blackford Flower",
   description: "FLOWERS FOR ALL",
 };
 

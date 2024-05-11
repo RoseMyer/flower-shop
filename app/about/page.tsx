@@ -1,21 +1,22 @@
 "use client"
-import { Stack, Container, Typography, Box, Divider } from '@mui/material'
-
-
+import { Stack, Container, Typography, Box, Divider } from '@mui/material';
 
 export default function About(props: any) {
   return (
-    <Container maxWidth="lg" sx={{py:3}}>
-      
-      <Stack spacing={3} sx={{my: 7.5}}>
-      <Typography variant="h2" sx={{ textAlign: 'center', color: 'white' }}>
-        ABOUT
-      </Typography>
+    <Container maxWidth="lg" sx={{ py: 3 }}>
+      <Stack spacing={3} sx={{ my: 7.5 }}>
+        <Typography variant="h2" sx={{ textAlign: 'center', color: 'white' }}>
+          ABOUT
+        </Typography>
+        
+        <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center', my: 2 }}>
+          <img src="/full_store.png" alt="Full View of Flower Shop" style={{ maxWidth: '100%', height: 'auto' }} />
+        </Box>
+
         <Box>
           <Typography variant="h5" sx={{ color: 'white' }}>
             Located:
           </Typography>
-          <br/>
           <Typography sx={{ color: 'white' }}>
             123 Willow Street, Brooklyn, NY 112001
           </Typography>
@@ -26,7 +27,13 @@ export default function About(props: any) {
             Phone Number: 123-111-1234
           </Typography>
         </Box>
+        
         <Divider variant="middle" sx={{ borderColor: 'grey' }} />
+        
+        <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center', my: 2 }}>
+          <img src="/old_timey.png" alt="Historic View of the Flower Shop" style={{ maxWidth: '100%', height: 'auto' }} />
+        </Box>
+        
         <Box>
           <Typography variant="h5" sx={{ color: 'white' }}>
             History:
@@ -36,7 +43,13 @@ export default function About(props: any) {
             Blackfords flower shop has been in business since 1956 when Ted Blackford opened it up with his wife. The Blackford family has been providing flowers to the local Brooklyn community ever since. They are focused on providing fresh, sustainably harvested flowers. Ted Blackford was known for saying “If nothing else will fix it, flowers will.” and we could not agree more.
           </Typography>
         </Box>
+        
         <Divider variant="middle" sx={{ borderColor: 'grey' }} />
+
+        <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center', my: 2 }}>
+          <img src="/two_guys.png" alt="Current Team at the Flower Shop" style={{ maxWidth: '100%', height: 'auto' }} />
+        </Box>
+        
         <Box>
           <Typography variant="h5" sx={{ color: 'white' }}>
             Team:
@@ -58,7 +71,9 @@ export default function About(props: any) {
             <strong>Josh Fenzo:</strong> Josh is our florist and long-time friend of Tom. He takes his artistic knowledge and applies it to the flowers.
           </Typography>
         </Box>
+        
         <Divider variant="middle" sx={{ borderColor: 'grey' }} />
+        
         <Box>
           <Typography variant="h5" sx={{ color: 'white' }}>
             Reviews:
@@ -79,8 +94,5 @@ export default function About(props: any) {
         </Box>
       </Stack>
     </Container>
-  )
+  );
 }
-
-
-
