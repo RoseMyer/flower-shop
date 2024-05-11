@@ -5,7 +5,7 @@ export default function Copyright() {
   return (
     <Typography sx={{ textAlign: 'center' }}>
       {'Copyright © '}
-      <Link href="/">Flower Shop, Inc.</Link>{' '}
+      <Link href="/">Blackford Flower Shop, Inc.</Link>{' '}
       {new Date().getFullYear()}.
     </Typography>
   );

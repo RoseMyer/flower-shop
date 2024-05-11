@@ -21,7 +21,7 @@ const CheckoutModal = ({ open, onClose, onConfirm }: any) => {
   };
 
   const handleSubmit = () => {
-    onConfirm(formData);
+    onConfirm(formData, setFormData);
     onClose();
   };
 
@@ -80,7 +80,7 @@ export function CheckoutButton() {
 
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-  const handleConfirm = async (formData: any) => {
+  const handleConfirm = async (formData: any, setFormData: any) => {
     console.log('type of card_number', typeof formData.card_number)
     console.log('type of sec_code', typeof formData.sec_code)
     if (isNaN(Number(formData.card_number)) || isNaN(Number(formData.sec_code))) {
@@ -107,9 +107,19 @@ export function CheckoutButton() {
     if (order_res === -1) {
       alert("something went wrong. Please give us a call and we'll sort you out.")
       return
-  }
-  sendEmail(formData, order_payload)
-  alert("Order complete. You should receive a confirmation email shortly.")
+    }
+    sendEmail(formData, order_payload)
+    alert("Order complete. You should receive a confirmation email shortly.")
+    setFormData({
+      first_name: '',
+      last_name: '',
+      phone: '',
+      email: '',
+      card_number: '',
+      sec_code: '',
+      exp_date: ''
+    })
+    cart?.clearCart()
   };
 
   return (

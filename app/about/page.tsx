@@ -10,7 +10,7 @@ export default function About(props: any) {
         </Typography>
         
         <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center', my: 2 }}>
-          <img src="/full_store.png" alt="Full View of Flower Shop" style={{ maxWidth: '100%', height: 'auto' }} />
+          <img src="/full_store.png" alt="Full View of Flower Shop" style={{ width: "50%", maxWidth: '100%', height: 'auto' }} />
         </Box>
 
         <Box>
@@ -31,7 +31,7 @@ export default function About(props: any) {
         <Divider variant="middle" sx={{ borderColor: 'grey' }} />
         
         <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center', my: 2 }}>
-          <img src="/old_timey.png" alt="Historic View of the Flower Shop" style={{ maxWidth: '100%', height: 'auto' }} />
+          <img src="/old_timey.png" alt="Historic View of the Flower Shop" style={{ width: "50%", maxWidth: '100%', height: 'auto' }} />
         </Box>
         
         <Box>
@@ -47,7 +47,7 @@ export default function About(props: any) {
         <Divider variant="middle" sx={{ borderColor: 'grey' }} />
 
         <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center', my: 2 }}>
-          <img src="/two_guys.png" alt="Current Team at the Flower Shop" style={{ maxWidth: '100%', height: 'auto' }} />
+          <img src="/two_guys.png" alt="Current Team at the Flower Shop" style={{ width: "50%", maxWidth: '100%', height: 'auto' }} />
         </Box>
         
         <Box>

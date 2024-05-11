@@ -3,14 +3,14 @@ import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter';
 import { ThemeProvider } from '@mui/material/styles';
 import { Box } from "@mui/material";
 import type { Metadata } from "next";
-import { Orbitron } from "next/font/google";
+import { Tsukimi_Rounded } from "next/font/google";
 import theme from '@/styles/theme';
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer';
 import { CartProvider } from "@/context/cartProvider"
 
-const orbitron = Orbitron({
-  weight: ['400', '500', '600', '700', '800', '900'],
+const tsukimi = Tsukimi_Rounded({
+  weight: ['400', '500', '600', '700'],
   subsets: ['latin'],
   display: 'swap',
   fallback: ['Helvetica', 'Arial', 'sans-serif'],
@@ -28,7 +28,7 @@ interface LayoutProps {
 
 export default function RootLayout({children}:LayoutProps) {
   return (
-    <html lang="en" className={orbitron.className}>
+    <html lang="en" className={tsukimi.className}>
       <body>
         <AppRouterCacheProvider options={{ enableCssLayer: true }}>
           <ThemeProvider theme={theme}>

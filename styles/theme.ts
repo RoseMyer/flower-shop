@@ -1,9 +1,9 @@
 'use client';
-import { Orbitron } from 'next/font/google';
+import { Tsukimi_Rounded } from 'next/font/google';
 import { createTheme } from '@mui/material/styles';
 
-const orbitron = Orbitron({
-  weight: ['400', '500', '600', '700', '800', '900'],
+const tsukimi = Tsukimi_Rounded({
+  weight: ['400', '500', '600', '700'],
   subsets: ['latin'],
   display: 'swap',
   fallback: ['Helvetica', 'Arial', 'sans-serif'],
@@ -11,7 +11,7 @@ const orbitron = Orbitron({
 
 const theme = createTheme({
   typography: {
-    fontFamily: orbitron.style.fontFamily,
+    fontFamily: tsukimi.style.fontFamily,
   },
 });
 

@@ -27,23 +27,22 @@ export default function Navigation() {
     fontWeight: 'bold',
     transition: 'transform 0.5s ease-in-out',
     '&:hover': {
-      transform: 'scale(1.25)',
-      // color: 'gray'
+      transform: 'scale(1.25)'
     }
   }
 
   return (
     <Slide appear={false} direction="down" in={!trigger}>
-      <AppBar sx={{backgroundColor:`#4338ca`, px: 4, py: 2}}>
+      <AppBar sx={{backgroundColor:`var(--primary)`, px: 4, py: 2}}>
         <nav style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%' }}>
           <Link href={`/`}>
-          <Typography variant="h4" sx={link_style}>FLOWER SHOP</Typography>  
+          <Typography variant="h4" sx={link_style}>BLACKFORD FLOWER SHOP</Typography>  
           </Link>
           <IconButton onClick={() => setMenuOpen(true)} color="inherit">
             <MenuIcon fontSize='large' sx={link_style}/>
           </IconButton>
           <Drawer anchor="right" open={menuOpen} onClose={() => setMenuOpen(false)}>
-            <List sx={{ width: 300, bgcolor: '#4338ca', minHeight: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'space-evenly' }}>
+            <List sx={{ width: 300, bgcolor: 'var(--primary)', minHeight: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'space-evenly' }}>
               {links.map((link, index) => (
                 <Link href={link.href} key={index}>
                   <ListItem sx={{ justifyContent: 'center', color: 'white' }}>

@@ -8,7 +8,7 @@ export default function Footer(props: any) {
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'center', // Changed to center to evenly distribute space
-      backgroundColor:`#4338ca`, // Adjust color according to your theme
+      backgroundColor:`var(--primary)`, // Adjust color according to your theme
       color: 'common.white',
       p: 1,
       width: '100%',
