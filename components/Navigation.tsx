@@ -39,7 +39,7 @@ export default function Navigation() {
     <Slide appear={false} direction="down" in={!trigger}>
       <AppBar className={`nav-bar`} sx={{backgroundColor:`#4338ca`}}>
 
-        <nav className="flex justify-between items-center my-2 mx-24">
+        <nav style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%' }}>
           <Link href={`/`}><h1 className={`transition-all duration-500 text-3xl text-bold hover:underline hover:scale-125 leading-relaxed`}>ICARUS DRONES</h1></Link>
           <IconButton onClick={() => setMenuOpen(true)} color="inherit">
             <MenuIcon fontSize='large' className={`transition-all duration-500 text-3xl text-bold hover:scale-125`}/>

@@ -10,7 +10,7 @@ import theme from '@/styles/theme';
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer';
 
-export const orbitron = Orbitron({
+const orbitron = Orbitron({
   weight: ['400', '500', '600', '700', '800', '900'],
   subsets: ['latin'],
   display: 'swap',
