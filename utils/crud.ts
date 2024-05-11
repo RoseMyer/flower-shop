@@ -1,22 +1,28 @@
 'use server'
 import { pool } from '@/utils/db';
-import {QueryResult} from 'mysql2/promise'
-export async function _create(table: string, data: any): Promise<boolean> {    
+import {QueryResult, ResultSetHeader} from 'mysql2/promise'
+export async function _create(table: string, data: any): Promise<number> {    
     if (!table || !data) {
-        return false
+        return -1
     }
 
     const keys = Object.keys(data);
-    const values = Object.values(data);
-    
+    console.log('keys', keys)
+    // const values = Object.values(data);
+
+    const values = Object.values(data).map(value => 
+        typeof value === 'object' ? JSON.stringify(value) : value
+    );
+    console.log("value_data", values)
     try {
         const columns = keys.join(', ');
         const placeholders = values.map(() => '?').join(', ');
         const sql = `INSERT INTO ${table} (${columns}) VALUES (${placeholders})`;
-        await pool.query(sql, values);
-        return true
+        const [result] = await pool.query<ResultSetHeader>(sql, values);
+        return result.insertId
     } catch (error) {
-        return false
+        console.log(error)
+        return -1
     }
 }
 
