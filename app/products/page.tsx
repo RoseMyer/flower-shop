@@ -30,7 +30,7 @@ export default function Products(props: any) {
   return (
     <Container maxWidth="lg" sx={{py:3}}>
       <Stack direction="column" spacing={3} sx={{ width: '100%', alignItems: 'center', justifyContent: 'center',  my: 7.5 }}>
-        <Typography variant="h2" sx={{ textAlign: 'center', color: 'white' }}>{JSON.stringify(cart)}</Typography>
+        <Typography variant="h2" sx={{ textAlign: 'center', color: 'white' }}>Products</Typography>
         {products.map((product, i) => (
           <ProductCard key={product.id} product={product} />
         ))}

@@ -1,23 +1,83 @@
 "use client"
-import { Stack, Container, Typography } from '@mui/material'
+import { Stack, Container, Typography, Box, Divider } from '@mui/material'
 
 
 
 export default function About(props: any) {
   return (
     <Container maxWidth="lg" sx={{py:3}}>
-      <Typography variant="h4" sx={{ textAlign: 'center', color: 'white', my: 7.5 }}>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit iaculis libero non efficitur. Mauris consectetur interdum risus ut ultricies. Vestibulum interdum dictum libero at commodo. Donec et orci volutpat, congue orci quis, placerat quam. Mauris fermentum vulputate vestibulum. Integer feugiat hendrerit libero at imperdiet. Donec tempus eget arcu in eleifend. Proin et felis finibus, consectetur augue quis, placerat diam.
-
-Nullam nec efficitur leo. Duis at orci non lacus cursus finibus. Pellentesque ipsum tortor, imperdiet a dui nec, bibendum fermentum nunc. Morbi nec imperdiet dui, sit amet finibus tortor. Morbi non bibendum ante. Donec bibendum orci at elit lacinia scelerisque. Praesent volutpat est arcu. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Maecenas ullamcorper cursus justo, at euismod turpis congue eu. Aliquam sed dui facilisis, maximus nisi et, porta felis. Pellentesque eget mauris auctor, suscipit orci eu, elementum mauris.
-
-Morbi mattis sit amet augue eu euismod. Ut vitae sem tortor. Aliquam ac metus vulputate, aliquet est sit amet, convallis lectus. Nunc scelerisque dolor ac lorem tincidunt mollis. Proin non elit vulputate, sollicitudin mi nec, porta sapien. Proin luctus, massa vel facilisis ullamcorper, enim diam interdum erat, in congue justo velit et enim. Donec sit amet lectus finibus, vulputate elit sed, tempor magna. Vestibulum vestibulum leo vitae quam ullamcorper, at dapibus nunc commodo. Proin ullamcorper convallis efficitur. Curabitur fringilla augue euismod, lobortis leo quis, interdum nunc. Donec congue lobortis semper. Sed vel quam arcu. Praesent imperdiet ex vel risus eleifend, at faucibus risus fermentum. In ac augue justo. Mauris vel fermentum quam, et auctor est. Donec sollicitudin viverra orci sed rutrum.
-
-Nulla mattis, purus eu convallis eleifend, lacus metus scelerisque leo, vel placerat elit felis vel quam. Sed vitae interdum ante. Nam blandit sapien rhoncus elit hendrerit, vel vehicula dui aliquam. Aliquam odio diam, fermentum nec varius at, lacinia ac dolor. Suspendisse quam arcu, vulputate vitae lectus ac, aliquet accumsan nisl. Quisque vulputate felis sed ex pulvinar placerat. Duis eget laoreet odio, id placerat quam.
-
-Sed luctus dolor sed mi semper, eget ultricies erat semper. Phasellus at dui vel neque posuere lacinia sed nec libero. Sed id eros sagittis, mattis est ac, semper risus. Quisque vitae lectus nec risus lobortis ultricies eu eget lorem. Nulla eu auctor eros, ut laoreet sem. Suspendisse vitae eros auctor, lacinia lacus id, consectetur erat. Proin porta varius purus sed placerat. Suspendisse vestibulum convallis velit. Nunc condimentum sem quis tellus cursus imperdiet. Sed sodales id elit ac porta. Aenean venenatis erat sed tellus porttitor, non sollicitudin erat facilisis. Aenean laoreet finibus dapibus. Mauris tempus enim non turpis egestas vehicula. Ut ullamcorper velit non porttitor dictum.
-
+      
+      <Stack spacing={3} sx={{my: 7.5}}>
+      <Typography variant="h2" sx={{ textAlign: 'center', color: 'white' }}>
+        ABOUT
       </Typography>
+        <Box>
+          <Typography variant="h5" sx={{ color: 'white' }}>
+            Located:
+          </Typography>
+          <br/>
+          <Typography sx={{ color: 'white' }}>
+            123 Willow Street, Brooklyn, NY 112001
+          </Typography>
+          <Typography sx={{ color: 'white' }}>
+            Hours: Monday through Sunday from 9:00 AM to 5:00 PM
+          </Typography>
+          <Typography sx={{ color: 'white' }}>
+            Phone Number: 123-111-1234
+          </Typography>
+        </Box>
+        <Divider variant="middle" sx={{ borderColor: 'grey' }} />
+        <Box>
+          <Typography variant="h5" sx={{ color: 'white' }}>
+            History:
+          </Typography>
+          <br/>
+          <Typography sx={{ color: 'white' }}>
+            Blackfords flower shop has been in business since 1956 when Ted Blackford opened it up with his wife. The Blackford family has been providing flowers to the local Brooklyn community ever since. They are focused on providing fresh, sustainably harvested flowers. Ted Blackford was known for saying “If nothing else will fix it, flowers will.” and we could not agree more.
+          </Typography>
+        </Box>
+        <Divider variant="middle" sx={{ borderColor: 'grey' }} />
+        <Box>
+          <Typography variant="h5" sx={{ color: 'white' }}>
+            Team:
+          </Typography>
+          <br/>
+          <Typography sx={{ color: 'white' }}>
+            <strong>Tom Blackford:</strong> Third-generation flower shop owner, Tom grew up seeing the importance of putting smiles on people's faces through the gift of flowers. He scouts for ways to find the best blooms.
+          </Typography>
+          <br/>
+          <Typography sx={{ color: 'white' }}>
+            <strong>Haley Blackford:</strong> Co-owner of the flower shop, Haley is the eyes and ears of the company. She makes sure business is running smoothly and ensures consumer satisfaction.
+          </Typography>
+          <br/>
+          <Typography sx={{ color: 'white' }}>
+            <strong>Jen Clark:</strong> Jen has been the store manager for over 10 years, she is a Brooklyn native and knows what the community wants! She takes care of orders and administrative tasks.
+          </Typography>
+          <br/>
+          <Typography sx={{ color: 'white' }}>
+            <strong>Josh Fenzo:</strong> Josh is our florist and long-time friend of Tom. He takes his artistic knowledge and applies it to the flowers.
+          </Typography>
+        </Box>
+        <Divider variant="middle" sx={{ borderColor: 'grey' }} />
+        <Box>
+          <Typography variant="h5" sx={{ color: 'white' }}>
+            Reviews:
+          </Typography>
+          <br/>
+          <Typography sx={{ color: 'white', mb: 1 }}>
+            “Every time I walk into this shop, I remember why I can never leave this neighborhood. The customer service is the best and the flowers are always fresh and beautiful!” — Fionia M.
+          </Typography>
+          <br/>
+          <Typography sx={{ color: 'white', mb: 1 }}>
+            “The team takes great care in their flowers and customers. They are easy to reach and always willing to help!” — Edward P.
+          </Typography>
+          <br/>
+          <Typography sx={{ color: 'white' }}>
+            “I got my wedding flowers from them and the flowers made the whole venue smell like a burst of spring. Highly recommend!” — Sammy C.
+          </Typography>
+          <br/>
+        </Box>
+      </Stack>
     </Container>
   )
 }
