@@ -1,17 +1,28 @@
 {
   "name": "flower-shop",
   "version": "1.0.0",
+  "description": "flower-shop",
+  "repository": {
+    "url": "https://github.com/RoseMyer/flower-shop",
+    "type": "git"
+  },
   "private": true,
+  "author": "Rose Myer",
+  "license": "MIT",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "clean-install": "./scripts/clean-install",
+    "commit": "./scripts/commit-script \"$@\""
   },
   "dependencies": {
     "@aws-amplify/ui-react": "latest",
     "@emotion/cache": "latest",
     "@emotion/react": "latest",
+    "@emotion/styled": "latest",
+    "@mui/icons-material": "latest",
     "@mui/material-nextjs": "latest",
     "aws-amplify": "latest",
     "next": "latest",
