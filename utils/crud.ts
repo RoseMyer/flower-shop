@@ -7,13 +7,8 @@ export async function _create(table: string, data: any): Promise<number> {
     }
 
     const keys = Object.keys(data);
-    console.log('keys', keys)
-    // const values = Object.values(data);
 
-    const values = Object.values(data).map(value => 
-        typeof value === 'object' ? JSON.stringify(value) : value
-    );
-    console.log("value_data", values)
+    const values = Object.values(data).map(value => typeof value === 'object' ? JSON.stringify(value) : value);
     try {
         const columns = keys.join(', ');
         const placeholders = values.map(() => '?').join(', ');
@@ -28,7 +23,6 @@ export async function _create(table: string, data: any): Promise<number> {
 
 export async function _read(table: string): Promise<any[]> {
     const [rows] = await pool.query(`SELECT * FROM ${table}`);
-    console.log('rows', rows)
     return rows as any[];
 }
 

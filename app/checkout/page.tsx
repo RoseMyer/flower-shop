@@ -1,5 +1,5 @@
 "use client"
-import { useState, useEffect, useContext, Dispatch, SetStateAction} from 'react'
+import { useContext } from 'react'
 import { Stack, Container, Typography, Button } from '@mui/material'
 import { CartContext } from "@/context/cartProvider"
 import { CartItemCard } from "@/components/CartItemCard"

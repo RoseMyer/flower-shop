@@ -12,6 +12,6 @@ module.exports = {
       SAKID: process.env.SAKID
     },
     compiler: {
-      removeConsole: false,
+      removeConsole: true,
     }
   }
