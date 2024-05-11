@@ -30,7 +30,10 @@ export const ProductCard = ({ product }: { product: Product }) => {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small" onClick={() => cart?.addItem(product)}>Add to Cart</Button>
+        <Button size="small" onClick={() => {
+          cart?.addItem(product)
+          alert(`${product.name} successfully added to cart! Please continue shopping or navigate to checkout.`)
+        }}>Add to Cart</Button>
       </CardActions>
     </Card>
   );
