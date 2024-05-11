@@ -19,13 +19,13 @@
   },
   "dependencies": {
     "@aws-amplify/ui-react": "latest",
+    "@aws-sdk/client-ses": "latest",
     "@emotion/cache": "latest",
     "@emotion/react": "latest",
     "@emotion/styled": "latest",
     "@mui/icons-material": "latest",
     "@mui/material-nextjs": "latest",
     "aws-amplify": "latest",
-    "aws-sdk": "latest",
     "next": "latest",
     "react": "latest",
     "react-dom": "latest"
